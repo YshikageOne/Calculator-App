@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+
+    <!--Border between input and output text so that they don't move when the input text starts adjusting-->
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter"
+            android:maxLines="1"
+            android:paddingLeft="25sp"
+            android:paddingTop="50sp"
+            android:paddingRight="25sp"
+            android:paddingBottom="10sp"
+            android:textColor="@color/white"
+            android:textSize="64sp" />
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="0dp"
+        android:layout_height="64sp"
+        android:fontFamily="@font/inter"
+        android:gravity="right"
+        android:paddingRight="25sp"
+        android:paddingBottom="10sp"
+        android:textColor="@color/gray"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"/>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        app:columnCount="4"
+        app:rowCount="5"
+        app:layout_constraintTop_toBottomOf="@id/outputText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 1st Row -->
+
+        <Button
+            android:id="@+id/ACButton"
+            android:layout_marginBottom="25dp"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/AC"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/PercentButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Percent"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/BackspaceButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:contentDescription="@string/backspace_description"
+            android:padding="18dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/backspace_foreground"
+            app:layout_column="2"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/DivideButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Divide"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="3"
+            app:layout_row="0" />
+
+        <!-- 2nd Row -->
+
+        <Button
+            android:id="@+id/SevenButton"
+            android:layout_marginBottom="25dp"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Seven"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/EightButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Eight"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/NineButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Nine"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="2"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/MultiplyButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Multiply"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="3"
+            app:layout_row="1" />
+
+        <!-- 3rd Row -->
+
+        <Button
+            android:id="@+id/FourButton"
+            android:layout_width="70dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Four"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <Button
+            android:id="@+id/FiveButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Five"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <Button
+            android:id="@+id/SixButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Six"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="2"
+            app:layout_row="2" />
+
+        <Button
+            android:id="@+id/SubtractButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Subtract"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="3"
+            app:layout_row="2" />
+
+        <!-- 4th row -->
+
+        <Button
+            android:id="@+id/OneButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/One"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/TwoButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Two"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/ThreeButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Three"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="2"
+            app:layout_row="3" />
+
+        <Button
+            android:id="@+id/AddButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/operation_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Add"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="3"
+            app:layout_row="3" />
+
+        <!-- 5th row -->
+
+        <Button
+            android:id="@+id/DblZeroButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/DoubleZero"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <Button
+            android:id="@+id/ZeroButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Zero"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <Button
+            android:id="@+id/PointButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+           android:layout_margin="4dp"
+            android:background="@drawable/numbers_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Period"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="2"
+            app:layout_row="4" />
+
+        <Button
+            android:id="@+id/EqualButton"
+            android:layout_width="70dp"
+            android:layout_height="69dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/equal_button"
+            android:fontFamily="@font/inter"
+            android:text="@string/Equals"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_column="3"
+            app:layout_row="4" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
